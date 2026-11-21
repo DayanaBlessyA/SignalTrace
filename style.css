@@ -1,0 +1,1131 @@
+
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #0b1120;
+    color: #e5e7eb;
+}
+
+.app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+    width: 250px;
+    flex: 0 0 250px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    align-self: flex-start;
+}
+
+.logo {
+    padding: 5px 10px 35px;
+}
+
+.logo h2 {
+    font-size: 23px;
+    letter-spacing: 1px;
+    color: #ffffff;
+}
+
+.logo h2 span {
+    color: #38bdf8;
+}
+
+.logo p {
+    font-size: 9px;
+    color: #64748b;
+    letter-spacing: 2px;
+    margin-top: 6px;
+}
+
+.nav-heading {
+    font-size: 10px;
+    color: #64748b;
+    letter-spacing: 1.5px;
+    margin: 10px 12px 15px;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #94a3b8;
+    padding: 13px 14px;
+    border-radius: 7px;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    background: #1e293b;
+    color: #ffffff;
+}
+
+.nav-link.active {
+    background: #12334a;
+    color: #38bdf8;
+    border-left: 3px solid #38bdf8;
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    border-top: 1px solid #263247;
+    padding: 18px 10px 0;
+}
+
+.sidebar-footer p {
+    font-size: 12px;
+    color: #cbd5e1;
+}
+
+.sidebar-footer span {
+    font-size: 10px;
+    color: #64748b;
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.main-content {
+    flex: 1;
+    min-width: 0;
+    margin-left: 0;
+    width: auto;
+    max-width: none;
+    padding: 30px;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #263247;
+    padding-bottom: 22px;
+}
+
+.topbar h3 {
+    font-size: 18px;
+    color: #f8fafc;
+}
+
+.topbar p {
+    color: #64748b;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 11px;
+    color: #4ade80;
+}
+
+.user-avatar {
+    width: 35px;
+    height: 35px;
+    background: #164e63;
+    color: #67e8f9;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+/* =========================
+   WELCOME SECTION
+========================= */
+
+.welcome-section {
+    margin: 35px 0 25px;
+}
+
+.welcome-section h1 {
+    font-size: 25px;
+    color: #f8fafc;
+}
+
+.welcome-section p {
+    color: #94a3b8;
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+/* =========================
+   STATISTICS CARDS
+========================= */
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.stat-card {
+    background: #151f30;
+    border: 1px solid #263247;
+    padding: 23px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.stat-card:hover {
+    border-color: #38bdf8;
+    transform: translateY(-3px);
+}
+
+.stat-card p {
+    color: #94a3b8;
+    font-size: 12px;
+}
+
+.stat-card h2 {
+    font-size: 29px;
+    margin: 15px 0 8px;
+    color: #f8fafc;
+}
+
+.stat-card span {
+    color: #64748b;
+    font-size: 11px;
+}
+
+/* =========================
+   CHARTS
+========================= */
+
+.charts-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.chart-card {
+    background: #151f30;
+    border: 1px solid #263247;
+    border-radius: 10px;
+    padding: 23px;
+    min-width: 0;
+}
+
+.chart-card h3,
+.table-card h3 {
+    font-size: 14px;
+    margin-bottom: 25px;
+    color: #e2e8f0;
+}
+
+.chart-card canvas {
+    max-height: 260px;
+}
+
+/* =========================
+   IMPORT TABLE
+========================= */
+
+.table-card {
+    background: #151f30;
+    border: 1px solid #263247;
+    border-radius: 10px;
+    padding: 23px;
+    margin-top: 25px;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 12px;
+}
+
+th {
+    color: #64748b;
+    padding: 14px 10px;
+    border-bottom: 1px solid #263247;
+}
+
+td {
+    padding: 16px 10px;
+    color: #cbd5e1;
+    border-bottom: 1px solid #263247;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 1000px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .charts-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+    .sidebar {
+        width: 180px;
+    }
+
+    .main-content {
+        margin-left: 180px;
+        width: calc(100% - 180px);
+        padding: 20px 15px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .topbar {
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
+
+/* DATA IMPORT PANEL */
+
+.import-panel {
+    background: #151f30;
+    border: 1px solid #263247;
+    border-radius: 10px;
+    padding: 24px;
+    margin-bottom: 25px;
+}
+
+.import-panel h3 {
+    color: #f8fafc;
+    font-size: 16px;
+}
+
+.import-panel p {
+    color: #94a3b8;
+    font-size: 12px;
+    margin-top: 8px;
+}
+
+.upload-area {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    align-items: center;
+    justify-content: start;
+    gap: 15px;
+    margin-top: 20px;
+}
+#selected-files {
+    grid-column: 1 / -1;
+    list-style: none;
+    padding: 0;
+    margin: 5px 0;
+    width: min(100%, 500px);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#selected-files li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 10px 14px;
+    background: #21152e;
+    border: 1px solid #563477;
+    border-radius: 8px;
+}
+
+#selected-files li button {
+    padding: 7px 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.upload-area input {
+    color: #cbd5e1;
+    font-size: 12px;
+    max-width: 100%;
+}
+
+.upload-area button {
+    background: #0284c7;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.upload-area button:hover {
+    background: #0369a1;
+}
+
+#upload-status {
+    margin-top: 15px;
+}
+
+/* =================================
+   SIGNALTRACE - NEON PURPLE THEME
+================================= */
+
+body {
+    background: #08050D;
+    color: #FFFFFF;
+}
+
+.sidebar {
+    background: #100817;
+    border-right: 1px solid #352044;
+}
+
+.logo h2 span {
+    background: linear-gradient(90deg, #A855F7, #EC4899);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-link {
+    color: #B8A9C5;
+}
+
+.nav-link:hover {
+    background: #24112F;
+    color: #FFFFFF;
+}
+
+.nav-link.active {
+    background: linear-gradient(
+        100deg,
+        #501078,
+        #871C70
+    );
+    color: #FFFFFF;
+    border-left: 3px solid #EC4899;
+}
+
+.main-content {
+    background: #08050D;
+}
+
+.topbar {
+    border-bottom: 1px solid #352044;
+}
+
+.stat-card,
+.chart-card,
+.table-card,
+.import-panel {
+    background: #120D19;
+    border: 1px solid #382044;
+    border-radius: 12px;
+    transition: 0.3s ease;
+}
+
+.stat-card:hover,
+.chart-card:hover,
+.table-card:hover {
+    border-color: #A855F7;
+    box-shadow: 0 0 22px rgba(168, 85, 247, 0.15);
+}
+
+.stat-card h2 {
+    color: #FFFFFF;
+}
+
+.stat-card:hover h2 {
+    color: #E9B5FF;
+}
+
+.welcome-section h1 {
+    color: #FFFFFF;
+}
+
+.welcome-section p,
+.stat-card p,
+.stat-card span {
+    color: #A99BB5;
+}
+
+.chart-card h3,
+.table-card h3,
+.import-panel h3 {
+    color: #FFFFFF;
+}
+
+.upload-area button {
+    background: linear-gradient(
+        90deg,
+        #9333EA,
+        #DB2777
+    );
+    color: white;
+    border-radius: 7px;
+    transition: 0.3s;
+}
+
+.upload-area button:hover {
+    box-shadow: 0 0 18px rgba(236, 72, 153, 0.4);
+    transform: translateY(-2px);
+}
+
+.user-avatar {
+    background: linear-gradient(135deg, #9333EA, #DB2777);
+    color: white;
+}
+
+.sidebar-footer {
+    border-color: #352044;
+}
+
+th,
+td {
+    border-color: #352044;
+}
+
+/* =====================================
+   SIGNALTRACE - PURPLE DOMINANT THEME
+===================================== */
+
+/* MAIN BACKGROUND */
+
+body {
+    background: #2B0645;
+    color: #FFFFFF;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+    background: linear-gradient(
+        180deg,
+        #240039,
+        #3B0764
+    );
+    border-right: 1px solid #7130A3;
+}
+
+/* MAIN CONTENT */
+
+.main-content {
+    background: linear-gradient(
+        135deg,
+        #3B0764,
+        #240039
+    );
+}
+
+/* TOPBAR */
+
+.topbar {
+    border-bottom: 1px solid #7130A3;
+}
+
+/* LOGO */
+
+.logo h2 span {
+    background: linear-gradient(90deg, #D8B4FE, #F472B6);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+/* NAVIGATION */
+
+.nav-link {
+    color: #E9D5FF;
+}
+
+.nav-link:hover {
+    background: #581C87;
+    color: white;
+}
+
+.nav-link.active {
+    background: linear-gradient(
+        100deg,
+        #9333EA,
+        #DB2777
+    );
+    color: white;
+    border-left: 4px solid #F9A8D4;
+    box-shadow: 0 4px 18px rgba(236,72,153,0.2);
+}
+
+/* HEADINGS */
+
+.welcome-section h1,
+.topbar h3 {
+    color: white;
+}
+
+.welcome-section p,
+.topbar p {
+    color: #E9D5FF;
+}
+
+/* STATISTICS AND CONTENT CARDS */
+
+.stat-card,
+.chart-card,
+.table-card,
+.import-panel {
+    background: linear-gradient(
+        145deg,
+        #581C87,
+        #451064
+    );
+
+    border: 1px solid #8B42B5;
+    border-radius: 13px;
+
+    box-shadow: 0 8px 25px rgba(20,0,35,0.2);
+
+    transition: 0.3s ease;
+}
+
+/* CARD HOVER */
+
+.stat-card:hover,
+.chart-card:hover,
+.table-card:hover {
+    transform: translateY(-4px);
+    border-color: #E879F9;
+
+    box-shadow: 0 8px 28px rgba(217,70,239,0.25);
+}
+
+/* CARD TEXT */
+
+.stat-card h2 {
+    color: #FFFFFF;
+}
+
+.stat-card p,
+.stat-card span {
+    color: #E9D5FF;
+}
+
+/* IMPORT BUTTON */
+
+.upload-area button {
+    background: linear-gradient(
+        90deg,
+        #A855F7,
+        #EC4899
+    );
+
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.upload-area button:hover {
+    box-shadow: 0 0 22px rgba(236,72,153,0.5);
+    transform: translateY(-2px);
+}
+
+/* TABLE */
+
+th {
+    color: #E9D5FF;
+    border-color: #8B42B5;
+}
+
+td {
+    color: #FFFFFF;
+    border-color: #7130A3;
+}
+
+/* AVATAR */
+
+.user-avatar {
+    background: linear-gradient(
+        135deg,
+        #A855F7,
+        #EC4899
+    );
+    color: white;
+}
+
+/* FOOTER */
+
+.sidebar-footer {
+    border-color: #7130A3;
+}
+
+.sidebar-footer p {
+    color: white;
+}
+
+.sidebar-footer span {
+    color: #D8B4FE;
+}
+
+/* CHART BACKGROUND */
+
+.chart-card h3 {
+    color: white;
+}
+
+#module-view .chart-card {
+    background: #581C87;
+}
+
+/* UPLOAD STATUS */
+
+#upload-status {
+    color: #F3E8FF;
+}
+
+/* =================================
+   SIGNALTRACE - BLACK & PURPLE
+================================= */
+
+body {
+    background: #08060D;
+    color: white;
+}
+
+/* PURPLE SIDEBAR */
+
+.sidebar {
+    background: #32104F;
+    border-right: 1px solid #63358A;
+}
+
+/* BLACK MAIN AREA */
+
+.main-content {
+    background: #0B0911;
+}
+
+/* TOPBAR */
+
+.topbar {
+    border-bottom: 1px solid #352044;
+}
+
+/* NAVIGATION */
+
+.nav-link {
+    color: #DCC9EE;
+}
+
+.nav-link:hover {
+    background: #49216A;
+    color: white;
+}
+
+.nav-link.active {
+    background: linear-gradient(90deg, #9333EA, #C02685);
+    color: white;
+    border-left: 4px solid #F0ABFC;
+}
+
+/* HEADINGS */
+
+.welcome-section h1,
+.topbar h3 {
+    color: white;
+}
+
+.welcome-section p,
+.topbar p {
+    color: #BDA9D1;
+}
+
+/* ALTERNATING CARDS */
+
+/* First and third cards - PURPLE */
+
+.stat-card:nth-child(odd) {
+    background: linear-gradient(135deg, #542276, #35134D);
+    border: 1px solid #8045A9;
+}
+
+/* Second and fourth cards - BLACK */
+
+.stat-card:nth-child(even) {
+    background: #15111D;
+    border: 1px solid #392748;
+}
+
+/* Chart cards */
+
+.chart-card:first-child {
+    background: linear-gradient(135deg, #542276, #35134D);
+    border: 1px solid #8045A9;
+}
+
+.chart-card:last-child {
+    background: #15111D;
+    border: 1px solid #392748;
+}
+
+/* Import panel - BLACK */
+
+.import-panel {
+    background: #15111D;
+    border: 1px solid #63358A;
+}
+
+/* TABLE - PURPLE */
+
+.table-card {
+    background: #35134D;
+    border: 1px solid #8045A9;
+}
+
+/* CARD HOVER */
+
+.stat-card:hover,
+.chart-card:hover,
+.table-card:hover {
+    transform: translateY(-3px);
+    border-color: #C084FC;
+    box-shadow: 0 0 18px rgba(168,85,247,0.18);
+}
+
+/* BUTTONS */
+
+.upload-area button {
+    background: linear-gradient(90deg, #9333EA, #EC4899);
+    color: white;
+    border: none;
+    border-radius: 8px;
+}
+
+/* AVATAR */
+
+.user-avatar {
+    background: linear-gradient(135deg, #9333EA, #EC4899);
+    color: white;
+}
+
+/* FOOTER */
+
+.sidebar-footer {
+    border-color: #63358A;
+}
+
+.sidebar-footer p {
+    color: white;
+}
+
+.sidebar-footer span {
+    color: #D8B4FE;
+}
+
+/* TABLE TEXT */
+
+th {
+    color: #D8B4FE;
+}
+
+td {
+    color: white;
+}
+
+/* =================================
+   SIGNALTRACE SIDEBAR DESIGN
+================================= */
+
+/* Entire sidebar black */
+
+.sidebar {
+    background: #09070D;
+    border-right: 1px solid #302039;
+}
+
+/* Normal menu items */
+
+.nav-link {
+    background: transparent;
+    color: #C8B8D8;
+    border-left: 4px solid transparent;
+    transition: all 0.3s ease;
+}
+
+/* Hover - subtle effect only */
+
+.nav-link:hover:not(.active) {
+    background: transparent;
+    color: #DDAAFF;
+}
+
+/* Only selected menu item is coloured */
+
+.nav-link.active {
+    background: linear-gradient(
+        100deg,
+        #9333EA,
+        #DB2777
+    );
+    color: #FFFFFF;
+    border-left: 4px solid #F9A8D4;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(168, 85, 247, 0.2);
+}
+
+/* Sidebar footer */
+
+.sidebar-footer {
+    border-top: 1px solid #302039;
+}
+
+.sidebar-footer p {
+    color: #FFFFFF;
+}
+
+.sidebar-footer span {
+    color: #A78BFA;
+}
+
+/* =================================
+   DASHBOARD ALIGNMENT FIX
+================================= */
+
+
+/* =====================================
+   SIGNALTRACE DASHBOARD ALIGNMENT FIX
+===================================== */
+
+.app-container {
+    display: flex;
+    width: 100%;
+    min-width: 0;
+}
+
+.sidebar {
+    width: 250px;
+    flex: 0 0 250px;
+}
+
+.main-content {
+    flex: 1;
+    min-width: 0;
+    margin-left: 0;
+    width: auto;
+    max-width: none;
+    overflow-x: hidden;
+}
+
+/* Statistics cards */
+.stats-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    width: 100%;
+    min-width: 0;
+}
+
+.stats-grid > * {
+    min-width: 0;
+}
+
+/* Charts */
+.charts-grid {
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+    width: 100%;
+    min-width: 0;
+}
+
+.charts-grid > * {
+    min-width: 0;
+}
+
+/* Prevent horizontal overflow */
+body {
+    overflow-x: hidden;
+}
+
+/* Responsive layout */
+@media (max-width: 1000px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .charts-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+    .sidebar {
+        width: 180px;
+        flex-basis: 180px;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 20px 15px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* CUSTOM FILE UPLOAD BUTTON */
+
+.upload-area input[type="file"] {
+    color: #E9D5FF;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.upload-area input[type="file"]::file-selector-button {
+    background: linear-gradient(90deg, #9333EA, #DB2777);
+    color: white;
+    border: none;
+    padding: 11px 18px;
+    border-radius: 7px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-right: 12px;
+    transition: 0.3s ease;
+}
+
+.upload-area input[type="file"]::file-selector-button:hover {
+    background: linear-gradient(90deg, #7E22CE, #BE185D);
+    box-shadow: 0 0 15px rgba(236, 72, 153, 0.35);
+}
+
+/* =====================================
+   COMMUNICATION ANALYSIS - CHART FIX
+===================================== */
+
+/* Keep statistics cards properly spaced */
+.stats-grid {
+    position: relative;
+    margin-bottom: 25px;
+    align-items: stretch;
+}
+
+/* Prevent chart section from overlapping */
+.charts-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+    margin-top: 25px;
+    align-items: start;
+}
+
+/* Control chart panel size */
+.chart-card {
+    position: relative;
+    min-width: 0;
+    min-height: 0;
+    height: auto;
+    padding: 24px;
+    overflow: hidden;
+}
+
+/* Give chart a proper height */
+.chart-card canvas {
+    display: block;
+    width: 100% !important;
+    max-width: 100%;
+    height: 220px !important;
+    max-height: 220px;
+}
+
+/* Responsive */
+@media (max-width: 650px) {
+    .charts-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .chart-card {
+        padding: 16px;
+    }
+}
+.assistant-answer {
+    margin-top: 20px;
+    padding: 20px;
+    background: #1e293b;
+    border-radius: 10px;
+    color: #e2e8f0;
+    line-height: 1.8;
+}
+
+#assistant-question {
+    width: 100%;
+    min-height: 90px;
+    padding: 12px;
+    margin: 15px 0;
+    border-radius: 8px;
+    border: 1px solid #475569;
+    background: #0f172a;
+    color: white;
+}
+
+#ask-assistant {
+    padding: 12px 22px;
+    border: none;
+    border-radius: 8px;
+    background: #8b5cf6;
+    color: white;
+    cursor: pointer;
+}
+
+/* Communication Analysis Chart */
+
+#module-view .chart-card {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+}
+
+#communicationNetworkChart {
+    display: block;
+    width: 100% !important;
+    height: 280px !important;
+}
+/* SHARED IMPORTED FILE DISPLAY */
+
+.imported-files {
+    margin-top: 15px;
+}
+
+.imported-file-item {
+    padding: 12px;
+    margin-top: 8px;
+    background: rgba(168, 85, 247, 0.12);
+    border: 1px solid #7130A3;
+    border-radius: 7px;
+    color: #F3E8FF;
+    font-size: 13px;
+    overflow-wrap: anywhere;
+}

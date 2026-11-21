@@ -1,0 +1,233 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SignalTrace | Telecom Investigation</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Cytoscape.js -->
+    <script src="https://unpkg.com/cytoscape/dist/cytoscape.min.js"></script>
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <div class="logo">
+                <h2>SIGNAL<span>TRACE</span></h2>
+                <p>TELECOM INTELLIGENCE</p>
+            </div>
+
+            <nav>
+                <p class="nav-heading">MAIN MENU</p>
+
+                <a href="#" class="nav-link active" data-section="dashboard">
+                    Dashboard
+                </a>
+
+                <a href="#" class="nav-link" data-section="import">
+                    Data Import
+                </a>
+
+                <a href="#" class="nav-link" data-section="communication">
+                    Communication Analysis
+                </a>
+
+                <a href="#" class="nav-link" data-section="contacts">
+                    Common Contacts
+                </a>
+
+                <a href="#" class="nav-link" data-section="timeline">
+                    Tower Timeline
+                </a>
+
+                <a href="#" class="nav-link" data-section="assistant">
+                    AI Assistant
+                </a>
+
+                <a href="#" class="nav-link" data-section="reports">
+                    Reports
+                </a>
+
+                <a href="#" class="nav-link" data-section="audit">
+                    Audit Logs
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <p>SignalTrace v1.0</p>
+                <span>Investigation Support System</span>
+            </div>
+
+        </aside>
+
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Topbar -->
+            <header class="topbar">
+
+                <div>
+                    <h3 id="page-title">Dashboard Overview</h3>
+                    <p>Telecom Investigation Analytics Platform</p>
+                </div>
+
+                <div class="user-info">
+                    <span>● System Online</span>
+                    <div class="user-avatar">IA</div>
+                </div>
+
+            </header>
+
+
+            <!-- Dashboard -->
+            <section class="dashboard-content" id="dashboard">
+
+                <!-- Welcome Section -->
+                <div class="welcome-section">
+
+                    <div>
+                        <h1>Investigation Overview</h1>
+                        <p>
+                            Analyse telecom records and discover meaningful patterns.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- Data Import Panel -->
+                <div class="import-panel">
+
+                    <div>
+                        <h3>Import Telecom Records</h3>
+                        <p>Upload CDR and IPDR CSV files for analysis.</p>
+                    </div>
+
+                    <div class="upload-area">
+
+                        <input
+                            type="file"
+                            id="csv-files"
+                            accept=".csv,text/csv"
+                            multiple
+                        >
+
+                        <button id="upload-button" type="button">
+                            Upload & Analyse
+                        </button>
+                        <ul id="selected-files"></ul>
+
+                    </div>
+
+                    <p id="upload-status">No files selected.</p>
+                    <div id="dashboard-imported-files" class="imported-files"></div>
+
+                </div>
+
+
+                <!-- Statistics -->
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+                        <p>Total Records</p>
+                        <h2 id="total-records">0</h2>
+                        <span>Imported records</span>
+                    </div>
+
+                    <div class="stat-card">
+                        <p>Unique Subscribers</p>
+                        <h2 id="total-subscribers">0</h2>
+                        <span>Identified subscribers</span>
+                    </div>
+
+                    <div class="stat-card">
+                        <p>Total Communications</p>
+                        <h2 id="total-calls">0</h2>
+                        <span>CDR records</span>
+                    </div>
+
+                    <div class="stat-card">
+                        <p>IPDR Sessions</p>
+                        <h2 id="total-sessions">0</h2>
+                        <span>Internet sessions</span>
+                    </div>
+
+                </div>
+
+
+                <!-- Charts -->
+                <div class="charts-grid">
+
+                    <div class="chart-card">
+                        <h3>Communication Activity</h3>
+                        <canvas id="communicationChart"></canvas>
+                    </div>
+
+                    <div class="chart-card">
+                        <h3>CDR vs IPDR Records</h3>
+                        <canvas id="callChart"></canvas>
+                    </div>
+
+                </div>
+
+
+                <!-- Recent Activity -->
+                <div class="table-card">
+
+                    <h3>Recent Data Imports</h3>
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>File Name</th>
+                                <th>Record Type</th>
+                                <th>Records</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="import-table">
+
+                            <tr>
+                                <td colspan="4">No data imported yet</td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+            <!-- Dashboard Ends -->
+
+
+            <!-- Other Module Pages -->
+            <section id="module-view" style="display: none;">
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
